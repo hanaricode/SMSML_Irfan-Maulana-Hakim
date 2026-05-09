@@ -1,0 +1,42 @@
+name: Preprocessing Otomatis
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  preprocessing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.7'
+
+      - name: Install Dependencies
+        run: |
+          pip install pandas numpy scikit-learn nltk
+
+      - name: Run Preprocessing Script
+        run: |
+          python preprocessing/automate_Irfan-Maulana-Hakim.py
+
+      - name: Upload Hasil Preprocessing
+        uses: actions/upload-artifact@v4
+        with:
+          name: tokopedia-preprocessing
+          path: preprocessing/tokopedia-preprocessing.csv
+
+      - name: Commit dan Push Hasil Preprocessing
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add preprocessing/tokopedia-preprocessing.csv
+          git commit -m "Auto: update hasil preprocessing" || echo "Tidak ada perubahan"
+          git push
