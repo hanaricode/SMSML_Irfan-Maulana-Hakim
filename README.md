@@ -335,10 +335,6 @@ The project uses **GitHub Actions** for automated preprocessing triggered on eve
 | Upload Artifact | `actions/upload-artifact@v4` | Save `tokopedia-preprocessing.csv` as workflow artifact |
 | Commit & Push | `git push` | Auto-commit updated preprocessing result to repo |
 
-Additional CI workflows:
-- [Eksperimen_SML_Irfan-Maulana-Hakim](https://github.com/hanaricode/Eksperimen_SML_Irfan-Maulana-Hakim) - preprocessing experiment pipeline
-- [Workflow-CI](https://github.com/hanaricode/Workflow-CI) - MLflow experiment CI workflow
-
 ---
 
 ## ⚙️ How to Run Locally
