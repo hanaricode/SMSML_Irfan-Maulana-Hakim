@@ -404,8 +404,8 @@ python "Monitoring dan Logging/3.prometheus_exporter.py"
 
 ---
 
-## 👤 Author
+## 👤 Author & 📄 License
 
 - **Name** : Hanari
 - **Platform** : Antigravity IDE 2.0.4
-- © 2026 Hanari. All Rights Reserved.
+- © 2026 Hanari. Licensed under the [MIT License](LICENSE).
